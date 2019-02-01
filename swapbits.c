@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   swapbits.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/30 12:12:57 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/30 12:16:45 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+unsigned char swap_bits(unsigned char octet)
 {
-	int counter;
-
-	counter = 0;
-	while (str[counter] != '\0')
-	{
-		write(1, str[counter], 1);
-		counter++;
-	}
+	return((octet >> 4) | (octet << 4));
 }

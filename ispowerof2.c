@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ispowerof2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/29 20:20:08 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/29 21:02:17 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void ft_putstr(char *str)
+int is_power_of_2(unsigned int n)
 {
-	int counter;
+	if (n == 0)
+		return (0);
+	while (n % 2 == 0)
+		n = n / 2;
+	if (n == 1)
+		return (1);
+	else
+		return (0);
+}	
 
-	counter = 0;
-	while (str[counter] != '\0')
-	{
-		write(1, str[counter], 1);
-		counter++;
-	}
+int main ()
+{
+	printf("%i", is_power_of_2(69));
+return (0);
 }

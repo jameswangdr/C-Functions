@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   maff_alpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/23 18:05:47 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/23 18:34:29 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+int main ()
 {
-	int counter;
+	char c;
+	int i;
 
-	counter = 0;
-	while (str[counter] != '\0')
+
+	i = 1;
+	c = 'a';
+	while (c != 'Z')
 	{
-		write(1, str[counter], 1);
-		counter++;
-	}
+		if (i %2 == 0)
+		{
+			c = c + 32;
+			write(1, &c, 1);
+			c = c - 32;
+		}
+		else
+		{
+			write(1, &c, 1);	
+			i++;
+			c++;	
+		}
+	}	
+	return (0);
 }

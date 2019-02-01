@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_countdown.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/23 17:39:44 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/23 17:55:09 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+int main ()
 {
-	int counter;
+	char c;
 
-	counter = 0;
-	while (str[counter] != '\0')
+	c  = '9';
+	while (c  >= '0')
 	{
-		write(1, str[counter], 1);
-		counter++;
+		write(1, &c, 1);
+		c--;
 	}
+	write (1, "\n", 1);
+	return (0);
 }

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   strcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/29 19:51:25 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/29 20:19:18 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putstr(char *str)
+int ft_strcmp(char *s1, char *s2)
 {
 	int counter;
-
+	int result;
+	
 	counter = 0;
-	while (str[counter] != '\0')
-	{
-		write(1, str[counter], 1);
+	result = 0;
+	while (s1[counter] == s2[counter] && s1[counter] != '\0' && s2[counter] != '\0')
 		counter++;
-	}
+	result = s1[counter] - s2[counter];
+	return (result);
 }

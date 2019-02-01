@@ -1,25 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/29 17:31:10 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/29 18:21:21 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void ft_putstr(char *str)
+int max (int *tab, unsigned int len)
 {
+	unsigned int big;
 	int counter;
 
 	counter = 0;
-	while (str[counter] != '\0')
+	while (counter < len)
 	{
-		write(1, str[counter], 1);
-		counter++;
+		if (tab[counter] <= tab[counter + 1])
+		{
+			big = tab[counter + 1];
+			counter++;
+		}
+		else
+		{
+			big = tab[counter];
+			counter++;
+		}
 	}
+	return (big);	
+}
+
+int main()
+{
+	unsigned int i;
+	int string[] = {1, 4, 3, 4};
+
+	i = 4;
+	printf("%i\n", max(string, 4));
+	return (0);
 }

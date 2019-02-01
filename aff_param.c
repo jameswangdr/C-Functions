@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   aff_param.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/23 21:09:15 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/23 21:37:31 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+int main (int argc, char **argv)
 {
-	int counter;
+	int n;
 
-	counter = 0;
-	while (str[counter] != '\0')
-	{
-		write(1, str[counter], 1);
-		counter++;
-	}
+	n = argc - 1;
+	if (argc > 1)
+		while (*argv[n])
+		{	
+			write (1, argv[n], 1);
+			argv[n]++;
+		}
+	write (1, "\n", 1);
+	return (0);
 }

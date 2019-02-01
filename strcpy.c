@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   strcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/23 21:40:54 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/25 12:37:40 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void ft_putstr(char *str)
+char *ft_strcpy(char *s1, char *s2)
 {
 	int counter;
 
 	counter = 0;
-	while (str[counter] != '\0')
+
+	while (s2[counter] != '\0')
 	{
-		write(1, str[counter], 1);
+		s1[counter] = s2[counter];
 		counter++;
 	}
+	s1[counter] = s2[counter];
+	return (s1);
 }
+
+int main ()
+{
+	char *s1[5]; 
+	char *s2[5];	"asdf";
+   	s2 = "fuck";
+
+	ft_strcpy(s1, s2);
+	printf("%s\n", s1);
+	return (0);
