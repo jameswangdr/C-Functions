@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 17:55:32 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/31 18:03:53 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/31 21:22:39 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/31 21:56:42 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putchar (char c)
-{
-	write(1, &c, 1);
-}
-
-int main (int argc, char **argv)
+void print_bits(unsigned char octet)
 {
 	int i;
 
-
-	if (argc != 2)
-	ft_putchar('\n');
-	if (argc == 2)
-	{	
-		i = 0;
-		while (argv[1][i] != '\0')
+	i = 128;
+	while (i > 0)
+	{
+		if (octet >= i)
 		{
-			if (argv[1][i] == 'a')
-				ft_putchar('a');
-				break;
-			i++;
+			ft_putchar('1');
+			octet = octet - i;
+			i = i / 2;
 		}
-	ft_putchar('\n');
+		else
+		{
+			ft_putchar('0');
+			i = i / 2;
+		}
 	}
 }

@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 17:55:32 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/31 18:03:53 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/31 20:57:59 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/31 21:20:49 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putchar (char c)
-{
-	write(1, &c, 1);
-}
-
-int main (int argc, char **argv)
+int ft_strcmp(char *s1, char *s2)
 {
 	int i;
-
-
-	if (argc != 2)
-	ft_putchar('\n');
-	if (argc == 2)
-	{	
-		i = 0;
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] == 'a')
-				ft_putchar('a');
-				break;
+	int result;
+	
+	while (s1[i] != '\0' && s2[i] != '\0')
+		if (s1[i] == s2[i])
 			i++;
-		}
-	ft_putchar('\n');
-	}
+		result = (s1[i] - s2[i]);
+	return (result);
 }

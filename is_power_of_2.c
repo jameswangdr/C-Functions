@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   is_power_of_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 17:55:32 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/31 18:03:53 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/31 19:55:00 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/31 20:17:41 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putchar (char c)
+int is_power_of_2(unsigned int n)
 {
-	write(1, &c, 1);
-}
-
-int main (int argc, char **argv)
-{
-	int i;
-
-
-	if (argc != 2)
-	ft_putchar('\n');
-	if (argc == 2)
-	{	
-		i = 0;
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] == 'a')
-				ft_putchar('a');
-				break;
-			i++;
-		}
-	ft_putchar('\n');
-	}
+	if (n == 0)
+		return (0);
+	while (n % 2 == 0)
+		n = n / 2;
+	if (n == 1)
+		return (1);
+	else
+		return (0);
 }

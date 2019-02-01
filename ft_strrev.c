@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_a.c                                            :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 17:55:32 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/31 18:03:53 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/31 20:18:51 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/31 20:55:51 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putchar (char c)
-{
-	write(1, &c, 1);
-}
-
-int main (int argc, char **argv)
+char *ft_strrev(char *str)
 {
 	int i;
+	int j;
+	char temp;
 
-
-	if (argc != 2)
-	ft_putchar('\n');
-	if (argc == 2)
-	{	
-		i = 0;
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] == 'a')
-				ft_putchar('a');
-				break;
-			i++;
-		}
-	ft_putchar('\n');
+	i = 0;
+	while (str[i + 1] != '\0')
+		i++;
+	j = 0;
+	while (i > j)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		i--;
+		j++;
 	}
+	return (str);
 }

@@ -5,21 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jamwang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/24 01:57:09 by jamwang           #+#    #+#             */
-/*   Updated: 2019/01/24 02:02:12 by jamwang          ###   ########.fr       */
+/*   Created: 2019/01/31 17:28:41 by jamwang           #+#    #+#             */
+/*   Updated: 2019/01/31 17:33:36 by jamwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void ft_putstr(char *str)
 {
-	int counter;
+	int i;
 
-	counter = 0;
-	while (str[counter] != '\0')
-	{
-		write(1, str[counter], 1);
-		counter++;
+	i = 0;
+	while (str[i] != '\0');
+	{	
+		write(1, str[i], 1);
+		i++;
 	}
 }
