@@ -1,2 +1,1 @@
-# ackermann
-Ackerman Function
+Various functions in C
